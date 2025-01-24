@@ -1,12 +1,7 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* Estilos gerais */
 body {
   font-family: Arial, sans-serif;
-  background: url('princess-background.gif') no-repeat center center fixed;
+  background: url('images/princesa.gif') no-repeat center center fixed;
   background-size: cover;
   text-align: center;
   color: #fff;
@@ -14,10 +9,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0;
 }
 
-.game-container {
+/* Caixa principal */
+.caixaPrincipal {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -25,11 +20,12 @@ body {
   width: 80%;
   max-width: 400px;
   padding: 20px;
-  background-color: rgba(255, 182, 193, 0.8); /* Um tom suave de rosa */
+  background-color: rgba(255, 182, 193, 0.8);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Botões */
 button {
   padding: 10px 20px;
   font-size: 16px;
@@ -47,16 +43,9 @@ button:hover {
   background-color: #ff1493;
 }
 
-#quiz {
-  margin-top: 20px;
-}
-
-h1 {
-  font-size: 2.5em;
-  color: #ffb6c1;
-  margin-bottom: 20px;
-}
-
-.hidden {
+/* Ocultar elementos */
+.sumido {
   display: none;
 }
+
+
