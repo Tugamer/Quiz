@@ -198,10 +198,10 @@ function trocaPraOutroQuiz() {
 }
 
 function mostraPerguntaDificil() {
-  const perguntaAtual = sortearPerguntasDificil(listaPerguntaDificil); // Usando o novo sorteio para evitar repetição
+  const perguntaAtual = sortearPerguntasDificil(listaPerguntaDificil); // usa o novo sorteio para evitar repetição
 
   if (!perguntaAtual) {
-    exibirPontuacaoETitulo(); // Se não houver mais perguntas difíceis, exibe a pontuação e título
+    exibirPontuacaoETitulo(); // acabam as perguntas, exibe a pontuação e título
     return;
   }
 
@@ -220,7 +220,7 @@ function confereRespostaDificil(respostaClicada, respostaCorreta, mensagemAcerto
     alert(mensagemErro);
   }
 
-  // Independentemente de acertar ou errar, avança para a próxima pergunta
+  // ndependentemente de acertar ou errar, avança para a próxima pergunta
   posicaoPergunta++;
 
   // Verifica se ainda há perguntas no quiz difícil
@@ -254,7 +254,7 @@ function exibirPontuacaoETitulo() {
 }
 
 function reiniciarQuiz() {
-  // Reseta os valores globais
+  // Reseta os valoresgit add .
   pontuacao = 0;
   posicaoPergunta = 0;
   perguntasDificilRespondidas = [];

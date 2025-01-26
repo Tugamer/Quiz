@@ -1,7 +1,7 @@
-/* Estilos gerais */
+
 body {
   font-family: Arial, sans-serif;
-  background: #000; /* Fundo base neutro */
+  background: #000; 
   text-align: center;
   color: #fff;
   height: 100vh;
@@ -9,7 +9,7 @@ body {
   overflow: hidden; /* Evita rolagem */
 }
 
-/* Fundo animado */
+
 #fundoAtivo {
   position: fixed;
   top: 0;
@@ -22,7 +22,7 @@ body {
   z-index: -1;
 }
 
-/* Caixa principal */
+
 .caixaPrincipal {
   display: flex;
   flex-direction: column;
@@ -37,11 +37,11 @@ body {
   position: absolute; /* Ajuste para centralizar */
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Centraliza no centro da tela */
+  transform: translate(-50%, -50%); /*  centraliza no centro da tela */
 }
 
 
-/* Botões */
+
 button {
   padding: 10px 20px;
   font-size: 16px;
@@ -59,7 +59,7 @@ button:hover {
   background-color: #ff1493;
 }
 
-/* Ocultar elementos */
+/* cultar elementos */
 .sumido {
   display: none;
   opacity: 0; /* Oculta completamente */
@@ -81,16 +81,15 @@ body.novoFundo #fundoAtivo {
 
 
 
-/* Mensagem estilizada "Achou msm KAKAK" */
 #mensagemKAKAAK {
   font-size: 2rem;
-  color: #fcfcfc;
+  color: #f8f7f8;
   font-weight: bold;
-  text-shadow: 4px 4px 9px rgb(255, 0, 0);
+  text-shadow: 4px 4px 9px rgb(209, 4, 148);
   opacity: 0;
   transition: opacity 1s ease-in-out;
   
-  /* Flexbox para centralização */
+  /*  para centralização */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -103,14 +102,14 @@ body.novoFundo #fundoAtivo {
   z-index: -1; /* Mantém fora da interação inicial */
 }
 
-/* Quando a mensagem aparece */
+
 #mensagemKAKAAK.aparecer {
   opacity: 1;
   z-index: 10; /* Traz para frente quando visível */
-  pointer-events: auto; /* Permite interação caso necessário */
+  pointer-events: auto; /* Permite interação mas nem precisa */
 }
 
-/* Classe para desaparecer a mensagem quando o fundo mudar */
+/* some a mensagem */
 #mensagemKAKAAK.desaparecer {
   opacity: 0;
   z-index: -1; /* Coloca de volta atrás */
@@ -119,12 +118,12 @@ body.novoFundo #fundoAtivo {
 }
 
 #botaoInicia {
-  position: relative; /* Pode ser 'relative' ou 'absolute', dependendo da necessidade */
-  z-index: 5; /* Fica acima de elementos ocultos */
+  position: relative; 
+  z-index: 5; 
 }
 
 
-/* Container da segunda parte */
+/* Container do segundo Quiz */
 .caixaSecundaria {
   display: none;
   flex-direction: column;
