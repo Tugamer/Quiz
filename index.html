@@ -6,17 +6,21 @@
   <title>Quiz de Princesas</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="quizPrincesaBody">
+<body>
+  <div id="fundoAtivo"></div> <!-- Camada do fundo animado -->
   <div class="caixaPrincipal">
     <h1>Quiz de Princesas</h1>
     <div id="areaPergunta" class="sumido"></div>
     <button id="botaoInicia">Começar Quiz</button>
   </div>
+  
 
-
-  <div class="quizVerdadeiro sumido">
-    <h1>Bem-vindo ao Quiz Verdadeiro!</h1>
-    <div id="novaPergunta"></div>
+  <div class="caixaSecundaria">
+    <!-- O conteúdo será inserido dinamicamente pelo JavaScript -->
+  </div>
+  
+  <div id="mensagemKAKAAK" class="sumido">
+    <h1>Acertou!... <br>Mas achou que era fácil assim? </h1>
   </div>
 
   <audio id="musicaFundo" loop>

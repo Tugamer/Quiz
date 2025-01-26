@@ -1,14 +1,25 @@
 /* Estilos gerais */
 body {
   font-family: Arial, sans-serif;
-  background: url('images/princesa.gif') no-repeat center center fixed;
-  background-size: cover;
+  background: #000; /* Fundo base neutro */
   text-align: center;
   color: #fff;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin: 0;
+  overflow: hidden; /* Evita rolagem */
+}
+
+/* Fundo animado */
+#fundoAtivo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('images/princesa.gif') no-repeat center center fixed;
+  background-size: cover;
+  transition: opacity 1s ease-in-out; /* Animação suave */
+  z-index: -1;
 }
 
 /* Caixa principal */
@@ -23,7 +34,12 @@ body {
   background-color: rgba(255, 182, 193, 0.8);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: absolute; /* Ajuste para centralizar */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centraliza no centro da tela */
 }
+
 
 /* Botões */
 button {
@@ -46,6 +62,121 @@ button:hover {
 /* Ocultar elementos */
 .sumido {
   display: none;
+  opacity: 0; /* Oculta completamente */
+  transition: opacity 1s ease-in-out; /* Animação suave */
 }
+
+/* Transição para desaparecer */
+.sumirSuavemente {
+  opacity: 0;
+  transition: opacity 1s ease-in-out; /* Animação suave */
+}
+
+/* Novo fundo */
+body.novoFundo #fundoAtivo {
+  background: url('images/novo.gif') no-repeat center center fixed;
+  background-size: cover;
+  opacity: 1;
+}
+
+
+
+/* Mensagem estilizada "Achou msm KAKAK" */
+#mensagemKAKAAK {
+  font-size: 2rem;
+  color: #fcfcfc;
+  font-weight: bold;
+  text-shadow: 4px 4px 9px rgb(255, 0, 0);
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  
+  /* Flexbox para centralização */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Permite clicar nos elementos atrás */
+  z-index: -1; /* Mantém fora da interação inicial */
+}
+
+/* Quando a mensagem aparece */
+#mensagemKAKAAK.aparecer {
+  opacity: 1;
+  z-index: 10; /* Traz para frente quando visível */
+  pointer-events: auto; /* Permite interação caso necessário */
+}
+
+/* Classe para desaparecer a mensagem quando o fundo mudar */
+#mensagemKAKAAK.desaparecer {
+  opacity: 0;
+  z-index: -1; /* Coloca de volta atrás */
+  pointer-events: none;
+  transition: opacity 1s ease-in-out; /* Transição suave */
+}
+
+#botaoInicia {
+  position: relative; /* Pode ser 'relative' ou 'absolute', dependendo da necessidade */
+  z-index: 5; /* Fica acima de elementos ocultos */
+}
+
+
+/* Container da segunda parte */
+.caixaSecundaria {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  max-width: 400px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7); /* Preto com transparência */
+  border-radius: 15px; /* Bordas arredondadas */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Sombra mais suave */
+  position: absolute; /* Centraliza o container */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centraliza */
+  z-index: 5; /* Garantir que fique acima de outros elementos */
+}
+
+#caixaSecundaria.exibido {
+  display: flex; /* Vai exibir a caixa como um flex container */
+}
+
+/* Botões de opção rosa neon */
+.caixaSecundaria button {
+  padding: 12px 24px;
+  font-size: 18px;
+  cursor: pointer;
+  background-color: #ff007f; /* Rosa neon */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  transition: background-color 0.3s, transform 0.2s;
+  margin: 12px;
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(255, 0, 127, 0.4); /* Sombra suave */
+}
+
+.caixaSecundaria button:hover {
+  background-color: #ff1493; /* Rosa mais intenso no hover */
+  transform: scale(1.05); /* Efeito de aumento no hover */
+}
+
+/* Texto e estilização da pergunta */
+.caixaSecundaria p {
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+
 
 
