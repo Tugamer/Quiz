@@ -81,11 +81,11 @@ body.novoFundo #fundoAtivo {
 
 
 
-#mensagemKAKAAK {
+#kakak {
   font-size: 2rem;
   color: #f8f7f8;
   font-weight: bold;
-  text-shadow: 4px 4px 9px rgb(209, 4, 148);
+  text-shadow: 6px 6px 6px rgb(199, 2, 2);
   opacity: 0;
   transition: opacity 1s ease-in-out;
   
@@ -103,14 +103,14 @@ body.novoFundo #fundoAtivo {
 }
 
 
-#mensagemKAKAAK.aparecer {
+#kakak.aparecer {
   opacity: 1;
   z-index: 10; /* Traz para frente quando visível */
   pointer-events: auto; /* Permite interação mas nem precisa */
 }
 
 /* some a mensagem */
-#mensagemKAKAAK.desaparecer {
+#kakak.desaparecer {
   opacity: 0;
   z-index: -1; /* Coloca de volta atrás */
   pointer-events: none;

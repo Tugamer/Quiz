@@ -73,11 +73,11 @@ const listaPerguntaDificil = [
     mensagemErro: "Eita, cuidado! Parece que o Nemesis está vindo atrás de você agora!"
   },
   {
-    texto: "Em 'Final Fantasy VII', qual é o nome da cidade natal de Cloud?",
-    opcoes: ["Cosmo Canyon", "Midgar", "Nibelheim", "Wutai"],
-    certa: 2,
-    mensagemAcerto: "Show! Você é um verdadeiro fã de FFVII!",
-    mensagemErro: "Não foi dessa vez! Cloud está desapontado."
+    texto:  "Qual foi o primeiro jogo em que Shadow the Hedgehog apareceu?",
+    opcoes: ["Sonic Heroes", "Sonic Adventure 2", "Shadow the Hedgehog", "Sonic Battle"],
+    certa: 1,
+    mensagemAcerto:  "Isso aí! O ultimate life form chegou ao multiplayer em Sonic Adventure 2!",
+    mensagemErro: "Que pena... Parece que o projeto Shadow ainda precisa de mais testes!"
   },
   {
     texto: "Qual é o nome do jogo indie onde você explora uma caverna cheia de tesouros e perigos?",
@@ -160,13 +160,13 @@ function confereResposta(respostaClicada) {
     fundoAtivo.classList.add('sumirSuavemente');
 
     setTimeout(() => {
-      mensagemKAKAAK.classList.remove('sumido');
-      mensagemKAKAAK.classList.add('aparecer');
+      kakak.classList.remove('sumido');
+      kakak.classList.add('aparecer');
     }, 1000);
 
     setTimeout(() => {
-      mensagemKAKAAK.classList.remove('aparecer');
-      mensagemKAKAAK.classList.add('desaparecer');
+      kakak.classList.remove('aparecer');
+      kakak.classList.add('desaparecer');
     }, 5000);
 
     setTimeout(() => {
