@@ -180,7 +180,7 @@ function confereResposta(respostaClicada) {
       caixaSecundaria.style.display = 'flex';
       posicaoPergunta = 0;
       mostraPerguntaDificil();
-    }, 7700);
+    }, 7770);
   } else {
     alert("Errou! Tente de novo!");
   }
