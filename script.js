@@ -180,7 +180,7 @@ function confereResposta(respostaClicada) {
       caixaSecundaria.style.display = 'flex';
       posicaoPergunta = 0;
       mostraPerguntaDificil();
-    }, 7500);
+    }, 7700);
   } else {
     alert("Errou! Tente de novo!");
   }
@@ -266,6 +266,12 @@ function reiniciarQuiz() {
   mostraPerguntaDificil();
 }
 
+window.addEventListener('load', function() {
+  // Quando tudo estiver carregado, remove a tela de carregamento
+  const loadingScreen = document.getElementById('loading-screen');
+  const mainContent = document.getElementById('conteudoPrincipal');
 
-
+  loadingScreen.style.display = 'none'; // Esconde a tela de carregamento
+  mainContent.style.display = 'block';  // Exibe o conteúdo principal
+});
 
