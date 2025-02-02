@@ -175,7 +175,40 @@ body.novoFundo #fundoAtivo {
   margin-bottom: 20px;
 }
 
+/* Tela de Carregamento */
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 9999; /* Para garantir que fique acima dos outros elementos */
+}
 
+.spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3); /* Cor do spinner */
+  border-top: 4px solid #ff1493; /* Cor do topo */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 10px;
+}
 
+/* Animação de rotação do spinner */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 
+/* Ocultar conteúdo até carregar */
+#conteudoPrincipal {
+  display: none;
+}
 
