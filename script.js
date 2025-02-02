@@ -269,10 +269,13 @@ function reiniciarQuiz() {
 document.addEventListener('DOMContentLoaded', function() {
   console.log("DOM carregado, iniciando pré-carregamento...");
 
-  // Teste com um arquivo de cada vez
+  
   const arquivosParaCarregar = [
-    'images/princesa.gif',
-    'audios/Lush life.mp3'
+ 'images/princesa.gif',
+    'audios/Lush life.mp3',  
+    'images/novo.gif',
+    'audios/hisoka music edited version.mp3',
+    'audios/som de interrupção.mp3'
   ];
 
   let carregados = 0;
