@@ -12,7 +12,7 @@ var musicaFundo = document.getElementById('musicaFundo');
 var efeitoScratch = document.getElementById('efeitoScratch');
 var novaMusica = document.getElementById('novaMusica');
 
-// Lista de perguntas (Antigas)
+// pergunta falsa
 const listaPergunta = [
   {
     texto: "Qual princesa é conhecida por ter cabelos longos e dourados?",
@@ -21,7 +21,7 @@ const listaPergunta = [
   }
 ];
 
-// Novo quiz de perguntas difíceis
+// perguntas dificeis
 const listaPerguntaDificil = [
   {
     texto: "Qual é o nome do criador do jogo 'The Legend of Zelda'?",
@@ -105,11 +105,11 @@ function sortearPerguntasDificil(perguntas) {
     return perguntas; // Reinicia o sorteio
   }
 
-  // Sorteia uma pergunta difícil não respondida
+  // Sorteia uma pergunta não respondida
   const indiceAleatorio = Math.floor(Math.random() * perguntasNaoRespondidas.length);
   const perguntaSorteada = perguntasNaoRespondidas[indiceAleatorio];
 
-  // Armazena o índice da pergunta sorteada
+  // 
   perguntasDificilRespondidas.push(perguntas.indexOf(perguntaSorteada));
 
   return perguntaSorteada;
@@ -152,7 +152,6 @@ function confereResposta(respostaClicada) {
   const perguntaAtual = listaAtual[posicaoPergunta];
 
   if (respostaClicada === perguntaAtual.certa) {
-    pontuacao += 10; // Incrementa a pontuação para cada resposta correta
     efeitoScratch.play();
     musicaFundo.pause();
     musicaFundo.currentTime = 0;
@@ -181,7 +180,7 @@ function confereResposta(respostaClicada) {
       caixaSecundaria.style.display = 'flex';
       posicaoPergunta = 0;
       mostraPerguntaDificil();
-    }, 7700);
+    }, 7500);
   } else {
     alert("Errou! Tente de novo!");
   }
@@ -254,17 +253,19 @@ function exibirPontuacaoETitulo() {
 }
 
 function reiniciarQuiz() {
-  // Reseta os valoresgit add .
+  // reseta os pontos
   pontuacao = 0;
   posicaoPergunta = 0;
   perguntasDificilRespondidas = [];
 
-  // Reinicia o conteúdo da caixa secundária
+  // reinicia o conteúdo da caixa secundária
   caixaSecundaria.innerHTML = ""; 
   caixaSecundaria.style.display = 'flex';
 
-  // Exibe a primeira pergunta do quiz difícil
+  // mostra a primeira pergunta do quiz difícil
   mostraPerguntaDificil();
 }
+
+
 
 
