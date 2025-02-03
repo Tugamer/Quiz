@@ -274,6 +274,10 @@ document.addEventListener('DOMContentLoaded', function() {
    const arquivosParaCarregar = [
     'images/princesa.gif',
     'audios/Lush life.mp3'
+    'audios/som de interrupção.mp3'
+    'audios/hisoka music edited version.mp3'
+    'images/novo.gif'
+    
   ];
   let carregados = 0;
   function verificarCarregamento() {
