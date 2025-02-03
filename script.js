@@ -266,12 +266,52 @@ function reiniciarQuiz() {
   mostraPerguntaDificil();
 }
 
-window.addEventListener('load', function() {
-  // Quando tudo estiver carregado, remove a tela de carregamento
-  const loadingScreen = document.getElementById('loading-screen');
-  const mainContent = document.getElementById('conteudoPrincipal');
+document.addEventListener('DOMContentLoaded', function() {
+  console.log("DOM carregado, iniciando pré-carregamento...");
 
-  loadingScreen.style.display = 'none'; // Esconde a tela de carregamento
-  mainContent.style.display = 'block';  // Exibe o conteúdo principal
+  
+  const arquivosParaCarregar = [
+ 'images/princesa.gif',
+    'audios/Lush life.mp3',  
+    'images/novo.gif',
+    'audios/hisoka music edited version.mp3',
+    'audios/som de interrupção.mp3'
+  ];
+
+  let carregados = 0;
+
+  function verificarCarregamento() {
+    carregados++;
+    console.log(`Carregado ${carregados}/${arquivosParaCarregar.length}`);
+
+    if (carregados === arquivosParaCarregar.length) {
+      iniciarJogo(); // Só inicia o jogo quando tudo estiver carregado
+    }
+  }
+
+  // Carrega um arquivo de imagem ou áudio
+  arquivosParaCarregar.forEach(arquivo => {
+    if (arquivo.endsWith('.mp3')) {
+      let audio = new Audio(arquivo);
+      audio.onloadeddata = verificarCarregamento; // Usa `onloadeddata` para garantir melhor compatibilidade
+    } else {
+      let img = new Image();
+      img.src = arquivo;
+      img.onload = verificarCarregamento;
+    }
+  });
 });
+
+function iniciarJogo() {
+  console.log("Todos os arquivos pesados foram carregados!");
+  document.getElementById('loading-screen').style.display = 'none';
+  document.getElementById('conteudoPrincipal').style.display = 'block';
+
+  // Inicia a música de fundo automaticamente
+  let musica = document.getElementById('musicaFundo');
+  if (musica) {
+    musica.play().catch(error => console.log("Autoplay bloqueado pelo navegador:", error));
+  }
+}
+
 
